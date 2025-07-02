@@ -1,2 +1,2 @@
 # config
-my config files for my linux computers :3
+my qtile config files for my linux computers :3
