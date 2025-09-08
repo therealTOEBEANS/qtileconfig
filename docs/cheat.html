@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qtile Keybinding Cheat Sheet</title>
+    <style>
+        /* General Body and Text Styling */
+        body {
+            background-color: black;
+            color: red;
+            font-family: monospace;
+            font-size: 16px; /* Uniform font size */
+            padding: 2em;
+            line-height: 1.8; /* Increased line-height for readability */
+        }
+
+        /* Header Styling */
+        h1, h2 {
+            font-weight: bold;
+            color: red; /* Headers are the same color as body text */
+            border-bottom: 1px solid red;
+            padding-bottom: 5px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+        th, td {
+            border: 1px solid red;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            font-weight: bold;
+        }
+        
+        /* General Code and Key Styling */
+        code {
+            padding: 2px 5px;
+        }
+
+        /* Modifier Key Styling */
+        .mod {
+            color: white;
+            border-radius: 4px;
+            padding: 3px 6px;
+            margin: 0 3px;
+            display: inline-block;
+            background-color: transparent; /* No background color */
+            border-width: 1px;
+        }
+
+        /* Specific Modifier Outline Styles */
+        .mod-main {
+            border-style: solid;
+            font-style: italic;
+        }
+        .mod-alt {
+            border-style: dotted;
+        }
+        .mod-ctrl {
+            border-style: dashed;
+        }
+        .mod-shift {
+            border-style: dashed;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Qtile Configuration Cheat Sheet</h1>
+    <p>A summary of all keybindings, chords, and mouse actions defined in <code>config.py</code>.</p>
+    <p>Primary Modifier (<span class="mod mod-main">mod</span>): Super/Windows Key</p>
+    <p>Alternate Modifier (<span class="mod mod-alt">mod1</span>): Alt Key</p>
+
+    <h2>Window Navigation & Manipulation</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Keybinding</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code><span class="mod mod-main">mod</span> + h</code></td><td>Move focus to left window</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + l</code></td><td>Move focus to right window</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + j</code></td><td>Move focus down</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + k</code></td><td>Move focus up</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + space</code></td><td>Move window focus to next window in stack</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-shift">shift</span> + h</code></td><td>Move focused window to the left</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-shift">shift</span> + l</code></td><td>Move focused window to the right</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-shift">shift</span> + j</code></td><td>Move focused window down in stack</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-shift">shift</span> + k</code></td><td>Move focused window up in stack</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Window Sizing</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Keybinding</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-ctrl">control</span> + h</code></td><td>Grow focused window to the left</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-ctrl">control</span> + l</code></td><td>Grow focused window to the right</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-ctrl">control</span> + j</code></td><td>Grow focused window down</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-ctrl">control</span> + k</code></td><td>Grow focused window up</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + n</code></td><td>Reset all window sizes to default</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Application Launchers</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Keybinding</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code><span class="mod mod-main">mod</span> + Return</code></td><td>Launch default terminal (kitty)</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + r</code></td><td>Spawn a command using Qtile's prompt widget</td></tr>
+        </tbody>
+    </table>
+    
+    <h2>Window & Qtile Management</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Keybinding</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code><span class="mod mod-main">mod</span> + w</code></td><td>Kill focused window</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + f</code></td><td>Toggle fullscreen for focused window</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + t</code></td><td>Toggle floating state for focused window</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-shift">shift</span> + Return</code></td><td>Toggle between split/unsplit sides of stack (Columns layout)</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-ctrl">control</span> + r</code></td><td>Reload Qtile configuration</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-ctrl">control</span> + q</code></td><td>Shutdown Qtile</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-ctrl">control</span> + <span class="mod mod-shift">shift</span> + z</code></td><td>Toggle window gaps</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Key Chords</h2>
+
+    <h3>Rofi Launcher (<code><span class="mod mod-main">mod</span> + tab</code>)</h3>
+    <table>
+        <tbody>
+            <tr><td><code>Tab</code></td><td>Rofi: Show applications (drun)</td></tr>
+            <tr><td><code>w</code></td><td>Rofi: Show open windows</td></tr>
+            <tr><td><code>q</code></td><td>Rofi: Show run command prompt</td></tr>
+            <tr><td><code>f</code></td><td>Launch XFE file explorer</td></tr>
+            <tr><td><code>;</code></td><td>Launch kitty</td></tr>
+            <tr><td><code>t</code></td><td>Launch Codium text editor</td></tr>
+            <tr><td><code>e</code></td><td>Open edtr3.html</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Brightness Control (<code><span class="mod mod-alt">mod1</span> + j</code>)</h3>
+    <table>
+        <tbody>
+            <tr><td><code>k</code></td><td>Increase screen brightness by 20%</td></tr>
+            <tr><td><code>j</code></td><td>Decrease screen brightness by 20%</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Volume Control (<code><span class="mod mod-alt">mod1</span> + u</code>)</h3>
+    <table>
+        <tbody>
+            <tr><td><code>i</code></td><td>Increase volume by 10%</td></tr>
+            <tr><td><code>u</code></td><td>Decrease volume by 10%</td></tr>
+        </tbody>
+    </table>
+    
+    <h3>Bluetooth Control (<code><span class="mod mod-alt">mod1</span> + b</code>)</h3>
+    <table>
+        <tbody>
+            <tr><td><code>s</code></td><td>Start scanning for devices (interactive)</td></tr>
+            <tr><td><code>S</code></td><td>Stop scanning for devices</td></tr>
+            <tr><td><code>p</code></td><td>Pair with a device (interactive)</td></tr>
+            <tr><td><code>c</code></td><td>Connect to a device (interactive)</td></tr>
+            <tr><td><code>d</code></td><td>Disconnect from a device (interactive)</td></tr>
+            <tr><td><code>l</code></td><td>List paired devices (interactive)</td></tr>
+            <tr><td><code>t</code></td><td>Trust a device (interactive)</td></tr>
+            <tr><td><code>f</code></td><td>Forget a device (interactive)</td></tr>
+            <tr><td><code>o</code></td><td>Toggle Bluetooth power</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Groups (Workspaces)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Keybinding</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code><span class="mod mod-main">mod</span> + [1-9]</code></td><td>Switch to group [1-9]</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + <span class="mod mod-shift">shift</span> + [1-9]</code></td><td>Move focused window to group [1-9] & follow</td></tr>
+        </tbody>
+    </table>
+    
+    <h2>Virtual Terminal (VT) Switching</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Keybinding</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code><span class="mod mod-ctrl">control</span> + <span class="mod mod-alt">mod1</span> + f[1-7]</code></td><td>Switch to Virtual Terminal [1-7]</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Mouse Bindings</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Binding</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code><span class="mod mod-main">mod</span> + Left-click Drag</code></td><td>Move floating window</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + Right-click Drag</code></td><td>Resize floating window</td></tr>
+            <tr><td><code><span class="mod mod-main">mod</span> + Middle-click</code></td><td>Bring window to front</td></tr>
+        </tbody>
+    </table>
+    
+    <h2>Bar Widget Click Actions</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Widget</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code>[g]</code> Left-click</td><td>Open Gemini</td></tr>
+            <tr><td><code>[g]</code> Right-click</td><td>Open Google</td></tr>
+            <tr><td><code>[f]</code> Left-click</td><td>Open Thunar file manager</td></tr>
+            <tr><td><code>[f]</code> Right-click</td><td>Open Veracrypt</td></tr>
+            <tr><td><code>[w]</code> Left-click</td><td>Open Wi-Fi TUI (nm-tui)</td></tr>
+            <tr><td><code>BT: [Status]</code> Left-click</td><td>Toggle Bluetooth Power</td></tr>
+            <tr><td><code>BT: [Status]</code> Right-click</td><td>Open bluetoothctl in terminal</td></tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
